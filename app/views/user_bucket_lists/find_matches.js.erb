@@ -1,0 +1,16 @@
+$("#user_bl_matches").dialog("open");
+$("#user_bl_matches ul").empty();
+$("#user_bl_matches ul").append(buildUserMatchesView());
+
+
+function buildUserMatchesView() {
+  var $html = "";
+  <% if @user_matches.size > 0 %>
+    <% @user_matches.each do |user| %>
+      $html += "<span> <img src='<%= user.user_profile.image_path %>'> </span>";
+    <% end %>
+  <% else %>
+    $html = "<span> Sorry, we couldn't find any matches at this time :( </span>";
+  <% end %>
+  return $html;
+}

@@ -1,0 +1,67 @@
+<% title "My BucketList" %>
+
+<script>
+  $(function (){
+  	$( "#user_bl_create" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 400,
+			modal: true,
+			buttons: {
+				Add: function() {
+          var form =$(this).find('form');
+          form.submit();
+				},
+				Cancel: function() {
+          $( this ).dialog( "close" );
+				}
+			}
+	  });
+
+    $( "#user_bl_matches" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 400,
+			modal: true,
+			buttons: {
+				Cancel: function() {
+                    $( this ).dialog( "close" );
+				}
+			}
+    });
+
+    $( "#add_to_bl_btn" ).click(function() {
+        $( "#user_bl_create" ).dialog("open");
+    });
+  });
+
+</script>
+
+<div>
+  <img src="<%=current_user.user_profile.image_path %>">
+  <p>
+    <h3><%=current_user.user_profile.full_name%></h3>
+  </p>
+</div>
+
+<p>
+	<button class="ui-widget ui-widget-content" id="add_to_bl_btn">Add To BL</button>
+</p>
+
+<div id="user_bl_show">
+	<ul>
+	  <% @user_bucket_lists.each do |bl|%>
+		<li> <%= bl.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => bl.name), :remote=>true%> </li>
+	  <%end%>
+	</ul>
+</div>
+
+<div id="user_bl_create" title="Create new user">
+    <%= render :partial => 'user_bucket_lists/create' %>
+</div>
+
+<div id="user_bl_matches" title="Users with same interest">
+  <ul>
+
+  </ul>
+</div>

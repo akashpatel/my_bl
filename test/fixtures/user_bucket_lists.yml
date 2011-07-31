@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bucket_list_id: 
+  when: 
+  user_id: 
+
+two:
+  bucket_list_id: 
+  when: 
+  user_id: 

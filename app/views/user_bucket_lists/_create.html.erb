@@ -1,0 +1,6 @@
+<%= form_for :user_bucket_list, :url => user_bucket_lists_path, :remote => true do |f| %>
+    <p> <%= f.label :name %>:</p>
+    <p><%= f.text_field :name, {:class=>"text ui-widget-content ui-corner-all"}%></p>
+    <p><%= f.label :when_to_complete %>:</p>
+    <p><%= f.select :when_to_complete, UserBucketList.select_when_to_complete, {:class=>"ui-widget-content ui-corner-all"}%></p>
+<% end %>
