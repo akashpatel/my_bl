@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711000033) do
+ActiveRecord::Schema.define(:version => 20110803080437) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,10 +20,16 @@ ActiveRecord::Schema.define(:version => 20110711000033) do
     t.datetime "updated_at"
   end
 
+  create_table "bucket_list_tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_bucket_lists", :force => true do |t|
     t.string   "when_to_complete"
-    t.string   "name"
     t.integer  "user_id"
+    t.integer  "bucket_list_tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

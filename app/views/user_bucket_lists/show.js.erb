@@ -5,6 +5,6 @@ $("#user_bl_show ul").append(buildBucketListHtml());
 
 function buildBucketListHtml() {
   var $html = '';
-  $html = '<li> <%= @user_bucket_list.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => @user_bucket_list.name), :remote=>true%> </li>';
+  $html = '<li> <%= @user_bucket_list.bucket_list_tag.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => @user_bucket_list.bucket_list_tag.name), :remote=>true%> </li>';
   return $html;
 }

@@ -25,7 +25,7 @@
 			modal: true,
 			buttons: {
 				Cancel: function() {
-                    $( this ).dialog( "close" );
+          $( this ).dialog( "close" );
 				}
 			}
     });
@@ -33,6 +33,21 @@
     $( "#add_to_bl_btn" ).click(function() {
         $( "#user_bl_create" ).dialog("open");
     });
+
+    $( "#user_bucket_list_name").autocomplete ({
+      minLength: 0,
+      source: function(request, response) {
+        $.ajax({
+            url: '<%=search_bucket_list_tags_path%>',
+            dataType: "json",
+            data: {term: request.term},
+            success: function( data ) {
+                response( data );
+            }
+        });
+      }
+    });
+
   });
 
 </script>
@@ -51,7 +66,7 @@
 <div id="user_bl_show">
 	<ul>
 	  <% @user_bucket_lists.each do |bl|%>
-		<li> <%= bl.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => bl.name), :remote=>true%> </li>
+		<li> <%= bl.bucket_list_tag.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => bl.bucket_list_tag.name), :remote=>true%> </li>
 	  <%end%>
 	</ul>
 </div>

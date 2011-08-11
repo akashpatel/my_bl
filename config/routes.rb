@@ -3,6 +3,7 @@ MyBl::Application.routes.draw do
   match '/auth/failure' => "home#index"
 
   match '/user_bucket_lists/find_matches' => 'user_bucket_lists#find_matches', :as => :find_matches
+  match '/bucket_list_tags/search' => 'bucket_list_tags#search', :as => :search_bucket_list_tags
 
   devise_for :users
 
