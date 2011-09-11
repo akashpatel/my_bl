@@ -18,17 +18,15 @@ class UserBucketListsController < ApplicationController
 
   def find_matches
     @current_bl = params["bl_name"]
-    #pull user_profile info of user_ids that match the same activity.
-    query_where = build_where_clause
-    @user_matches = User.joins(:user_bucket_lists).where(query_where, "%#{@current_bl}%", current_user.id)
+
+    #retrieve all users that match current bucketlist
+    @user_matches = BucketListTag.find_matching_users(@current_bl)
+    #remove current user from the list because we only want to display all matching users w/o current user
+#    @user_matches.delete(current_user)
 
     respond_to do |format|
       format.js {render 'user_bucket_lists/find_matches'}
     end
-  end
-
-  def build_where_clause
-    "user_bucket_lists.name like ? AND user_id != ?"
   end
 
 end

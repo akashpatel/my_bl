@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many  :authentications
-  has_many  :user_bucket_lists
   has_one   :user_profile
+  has_many  :user_bucket_lists
+  has_many  :bucket_list_tags,  :through => :user_bucket_lists
 
 
   # Include default devise modules. Others available are:
