@@ -8,7 +8,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2', '0.2.11'
 gem 'devise'
-gem 'rake', '0.8.7'
+gem 'rake', '0.9.2'
 gem 'koala' # 1.0
 gem 'omniauth'
 

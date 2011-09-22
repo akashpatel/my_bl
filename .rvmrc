@@ -1,1 +1,1 @@
-rvm use --create ree-1.8.7-2010.02@my_bl
+rvm use --create ruby-1.8.7-p352@my_bl

@@ -1,4 +1,7 @@
+.redcar
 .bundle
+.rvmrc
+.project
 db/*.sqlite3
 log/*.log
 tmp/**/*
