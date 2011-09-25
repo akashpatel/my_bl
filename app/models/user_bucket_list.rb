@@ -3,6 +3,9 @@ class UserBucketList < ActiveRecord::Base
   
   belongs_to  :user
   belongs_to  :bucket_list_tag
+  
+  has_many    :sent_invites
+  has_many    :received_invites
 
 
   def self.select_when_to_complete
