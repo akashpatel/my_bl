@@ -18,15 +18,21 @@ class UserBucketListsController < ApplicationController
 
   def find_matches
     @current_bl = params["bl_name"]
-
-    #retrieve all users that match current bucketlist
     @user_matches = BucketListTag.find_matching_users(@current_bl)
     #remove current user from the list because we only want to display all matching users w/o current user
-#    @user_matches.delete(current_user)
+    #@user_matches.delete(current_user)
 
     respond_to do |format|
       format.js {render 'user_bucket_lists/find_matches'}
     end
+  end
+  
+  def send_invite
+    #Save sent invite by original user's bl id
+    
+    #Save received invte by new user's bl id
+    
+    #Some kind of notification mechanism: email or soft in-app notification
   end
 
 end
