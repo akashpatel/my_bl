@@ -2,6 +2,7 @@
 .bundle
 .rvmrc
 .project
+.idea/
 db/*.sqlite3
 log/*.log
 tmp/**/*

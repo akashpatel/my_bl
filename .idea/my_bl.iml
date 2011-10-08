@@ -42,7 +42,7 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="rake" version="0.8.7" bound="EQUAL" git="false" path="false" doRequire="true" />
+        <dependency name="rake" version="0.9.2" bound="EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
@@ -126,6 +126,10 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-openid (v2.1.8, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/ruby-openid-2.1.8)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-openid-apps-discovery (v1.2.0, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/ruby-openid-apps-discovery-1.2.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rubyntlm (v0.1.1, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/rubyntlm-0.1.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] devise (v1.4.5, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/devise-1.4.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.9.2, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/rake-0.9.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] koala (v1.1.0, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/koala-1.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bcrypt-ruby (v3.0.0, /Users/apatel/.rvm/gems/ree-1.8.7-2010.02@my_bl/gems/bcrypt-ruby-3.0.0)" level="application" />
   </component>
 </module>
 

@@ -15,6 +15,7 @@ class AuthenticationsController < ApplicationController
         sign_in(:user, user)
       end
     end
+    store_fb_auth_token(omniauth["credentials"]["token"])
     redirect_to user_profile_path(current_user.user_profile)
   end
 
