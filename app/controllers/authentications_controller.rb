@@ -16,6 +16,7 @@ class AuthenticationsController < ApplicationController
       end
     end
     store_fb_auth_token(omniauth["credentials"]["token"])
+    debugger
     redirect_to user_profile_path(current_user.user_profile)
   end
 

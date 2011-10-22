@@ -52,6 +52,16 @@
 
 </script>
 
+<script>
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) {return;}
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div>
   <img src="<%=current_user.user_profile.image_path %>">
   <p>
@@ -66,10 +76,15 @@
 <div id="user_bl_show">
 	<ul>
 	  <% @user_bucket_lists.each do |bl|%>
-		<li> <%= bl.bucket_list_tag.name%> <%= link_to "Show Matches", find_matches_path(:bl_name => bl.bucket_list_tag.name), :remote=>true%> </li>
+		<li> 
+			<%= bl.bucket_list_tag.name%> 
+	        <div class="fb-send" data-href="<%=activity_invite_url%>" data-font="verdana"></div>																					
+		</li>
 	  <%end%>
 	</ul>
 </div>
+
+<div id="fb-root"></div>
 
 <div id="user_bl_create" title="Create new user">
     <%= render :partial => 'user_bucket_lists/create' %>
