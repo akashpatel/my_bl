@@ -3,8 +3,11 @@ class UserBucketListsController < ApplicationController
   def create
     ubl = UserBucketList.new
     ubl.user_id = current_user.id
-    ubl.associate_bucket_list_tag(params["user_bucket_list"]["name"])
-    ubl.when_to_complete = params["user_bucket_list"]["when_to_complete"]
+    ubl.rsvp_type = params["user_bucket_list"]["rsvp_type"]
+    ubl.name = params["user_bucket_list"]["name"]
+    ubl.associate_bucket_list_tag(params["user_bucket_list"]["tag"])
+    ubl.where = params["user_bucket_list"]["where"]
+    ubl.when = params["user_bucket_list"]["when"]
     ubl.save
     show
   end

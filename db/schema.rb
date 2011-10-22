@@ -41,7 +41,10 @@ ActiveRecord::Schema.define(:version => 20110925000413) do
   end
 
   create_table "user_bucket_lists", :force => true do |t|
-    t.string   "when_to_complete"
+    t.string   "when"
+    t.string   "name"
+    t.string   "rsvp_type"
+    t.string   "where"
     t.integer  "user_id"
     t.integer  "bucket_list_tag_id"
     t.datetime "created_at"

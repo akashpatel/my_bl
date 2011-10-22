@@ -34,7 +34,7 @@
         $( "#user_bl_create" ).dialog("open");
     });
 
-    $( "#user_bucket_list_name").autocomplete ({
+    $( "#user_bucket_list_tag").autocomplete ({
       minLength: 0,
       source: function(request, response) {
         $.ajax({
@@ -71,7 +71,7 @@
 	</ul>
 </div>
 
-<div id="user_bl_create" title="Create new user">
+<div id="user_bl_create" title="Add Activity">
     <%= render :partial => 'user_bucket_lists/create' %>
 </div>
 
