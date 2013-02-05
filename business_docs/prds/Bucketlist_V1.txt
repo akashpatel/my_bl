@@ -1,0 +1,17 @@
+Bucket List Features - V1:
+----------------------------
+
+(Tag: BL-101)
+1.  User Invites:
+ 	1.1 User should be able to invite other users that share the same bucket list
+	1.2 System should be able to track invites, both SENT and RECEIVED
+	
+	Example:  
+			Setup:
+			  User 1 has a bucketlist - 'Skydiving'
+			  User 2 has a bucketlist - 'Skydiving'
+			Flow:
+			  User 1 can send invite to User 2 for Skydiving and vice versa.
+			  System will persist user's invites both sent and received.
+			
+2.  
